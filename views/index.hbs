@@ -1,14 +1,49 @@
-{{!-- dropdown --}}
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+<div class=' m-5 p-3 border border-danger' style="width: 70%;">
 
-{{!-- totalAmount --}}
+  {{!-- dropdown --}}
+  <div class="dropdown">
+    <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;">
+      類別
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+
+  {{!-- totalAmount --}}
+  <h5 class='mb-3'>總金額：<span style="font-size: 48px;color:red">25260</span></h5>
+
+  {{!-- data list --}}
+  <ul class="list-group mb-3">
+
+    {{!-- #each --}}
+
+    <li class="list-group-item d-flex" style="height: 80px;">
+      <div class="container d-flex justify-content-between align-items-center bg bg-light mr-5" style="width: 60%;">
+        <div class="headInfo d-flex align-items-center">
+          <i class="fas fa-home mx-2 text-info" style="font-size: 48px;"></i>
+
+          <div class="middleInfo mr-3">
+            <h5 class='mt-3'>租金</h5>
+            <p class="date align-items-center">2019/04/01</p>
+          </div>
+        </div>
+        <h6 class="amount">60</h6>
+      </div>
+
+      <div class='buttons d-flex' style="width: 30%;">
+        <button class="btn btn-outline-success border border-white" style="display:inline">修改</button>
+        <button class="btn btn-outline-danger border border-white" style="display:inline">刪除</button>
+      </div>
+    </li>
+
+    {{!-- /each --}}
+
+  </ul>
+  {{!-- create --}}
+  <button class="btn btn-danger">新增支出</button>
+
+</div>
