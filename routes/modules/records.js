@@ -8,5 +8,13 @@ router.get('/new', (req, res) => {
   res.render('new')
 })
 
+router.delete('/:id', (req, res) => {
+  const recordToDelete = req.params.id
+  return Record.findById(recordToDelete)
+    .then(record => Record.deleteOne(record))
+    .then(() => res.redirect('/'))
+    .catch(err => console.error(err))
+
+})
 
 module.exports = router
