@@ -3,6 +3,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// use static "Public"
+app.use(express.static('public'))
+
 // express-handlebars with "hbs"
 const exphbs = require('express-handlebars')
 
@@ -15,9 +18,6 @@ app.set('view engine', 'hbs')
 
 // connect to database
 require('./config/mongoose')
-
-// require Model: Record
-// const Record = require('./models/record')
 
 // use body-parser
 const bodyParser = require('body-parser')
