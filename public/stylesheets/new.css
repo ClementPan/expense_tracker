@@ -1,0 +1,18 @@
+h6 span {
+  font-size: 24px;
+}
+
+.input {
+  /* border: 2px solid; */
+  display: flex;
+  width: 100%;
+  margin-left: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* .create {
+  display: 
+} */

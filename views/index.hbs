@@ -1,61 +1,59 @@
-<div class='m-3 p-3 border border-primary' style="width: 70%;">
-
-  {{!-- dropdown --}}
-  <div class="dropdown ml-4">
-    <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50%;">
-      類別
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
+{{!-- dropdown --}}
+<div class="dropdown ml-4">
+  <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" style="width: 50%;">
+    類別
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">家居物業</a>
+    <a class="dropdown-item" href="#">交通出行</a>
+    <a class="dropdown-item" href="#">休閒娛樂</a>
+    <a class="dropdown-item" href="#">餐飲食品</a>
+    <a class="dropdown-item" href="#">其他</a>
   </div>
-
-  {{!-- totalAmount --}}
-  <h5 class='mb-3 ml-5'>總金額：<span class='ml-4'>無資料</span></h5>
-
-  <div class="icons" style="display: none;">
-    {{#each category}}{{this}}{{/each}}
-  </div>
-
-  {{!-- data list --}}
-  <ul class="list-group mb-3">
-
-    {{#each record}}
-
-    <div class="icons">
-      <p>{{#each category}}{{this}}{{/each}}</p>
-    </div>
-
-    <li class="d-flex" style="height: 80px;">
-      <div class="container d-flex justify-content-between align-items-center mr-5" style="width: 60%;">
-        <div class="headInfo d-flex align-items-center">
-
-          <i class="cateIcons text-info mx-2 fas " style="width: 50px;"></i>
-
-          <div class="middleInfo mr-3">
-            <h5 class='mt-3'>{{this.name}}</h5>
-            <p class="date align-items-center">{{this.date}}</p>
-          </div>
-        </div>
-        <h6 class="amount">{{this.amount}}</h6>
-      </div>
-
-      <div class='buttons d-flex align-items-center' style="width: 30%;">
-        <form action="/records/{{this._id}}" method="get">
-          <button type="submit" class="btn btn-outline-dark border border-white" style="display:inline">修改</button>
-        </form>
-        <form action="/records/{{this._id}}?_method=DELETE" method="POST">
-          <button type="submit" class="btn btn-outline-dark border border-white" style="display:inline">刪除</button>
-        </form>
-      </div>
-    </li>
-    {{/each}}
-
-  </ul>
-  {{!-- create --}}
-  <a href="/records/new" class="btn btn-danger ml-5" style="width: 30%;">新增支出</a>
-
 </div>
+
+{{!-- totalAmount --}}
+<h5 class='mb-3 ml-5'>總金額：<span class='ml-4'>無資料</span></h5>
+
+<div class="icons" style="display: none;">
+  {{#each category}}{{this}}{{/each}}
+</div>
+
+{{!-- data list --}}
+<ul class="list-group mb-3">
+
+  {{#each record}}
+
+  <div class="icons">
+    <p>{{#each category}}{{this}}{{/each}}</p>
+  </div>
+
+  <li class="d-flex" style="height: 80px;">
+    <div class="container d-flex justify-content-between align-items-center mr-5" style="width: 60%;">
+      <div class="headInfo d-flex align-items-center">
+
+        <i class="cateIcons text-info mx-2 fas " style="width: 50px;"></i>
+
+        <div class="middleInfo mr-3">
+          <h5 class='mt-3'>{{this.name}}</h5>
+          <p class="date align-items-center">{{this.date}}</p>
+        </div>
+      </div>
+      <h6 class="amount">{{this.amount}}</h6>
+    </div>
+
+    <div class='buttons d-flex align-items-center' style="width: 30%;">
+      <form action="/records/{{this._id}}" method="get">
+        <button type="submit" class="btn btn-outline-dark border border-white" style="display:inline">修改</button>
+      </form>
+      <form action="/records/{{this._id}}?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-outline-dark border border-white" style="display:inline">刪除</button>
+      </form>
+    </div>
+  </li>
+  {{/each}}
+
+</ul>
+{{!-- create --}}
+<a href="/records/new" class="btn btn-danger ml-5" style="width: 30%;">新增支出</a>

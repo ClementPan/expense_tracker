@@ -1,3 +1,11 @@
+/* main.hbs */
+.index {
+  width: 70%; 
+  /* height: 45rem; */
+  border-radius: 20px
+}
+
+/* index.hbs */
 h5 span{
   font-size: 60px;
   color:red

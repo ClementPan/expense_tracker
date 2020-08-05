@@ -9,17 +9,23 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/7cbde39b8f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/stylesheets/new.css">
+
 </head>
 
 <body>
   <header>
     <nav class='navbar navbar-dark bg-light'>
-      <h3>家庭記帳本</h3>
+      <a href="/" class="btn btn-light">
+        <h3>家庭記帳本</h3>
+      </a>
     </nav>
   </header>
 
   <div class="container d-flex justify-content-center">
-    {{{ body }}}
+    <div class='index m-3 p-3 border border-primary'>
+      {{{ body }}}
+    </div>
   </div>
   {{!-- scripts --}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

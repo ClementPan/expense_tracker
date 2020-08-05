@@ -27,15 +27,17 @@ router.get('/', (req, res) => {
     .catch(err => console.error(err))
 })
 
+// press create button
+router.post('/', (req, res) => {
+  const newRecord = req.body
+  Record.create(newRecord)
+    .then(res.redirect('/'))
+    .catch(err => console.error(err))
+})
 
-//////////////////////////
 
-// router.get('/', (req, res) => {
-//   // let category = []
-//   Record.find()
-//     .sort({ _id: 1 })
-//     .lean()
-//     .then(record => res.render('index', { record }))
-// })
+
+
+
 
 module.exports = router
