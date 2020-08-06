@@ -1,32 +1,61 @@
-// const { DocumentProvider } = require("mongoose")
-
+//////////// functions ////////////
 // 總金額
-const amountArr = document.querySelectorAll('.amount')
-const totalAmount = document.querySelector('h5 span')
-
-let amount = 0
-amountArr.forEach(item => amount += Number(item.innerHTML))
-totalAmount.innerText = amount
-
+const getTotalAmount = function () {
+  const amountArr = document.querySelectorAll('.amount')
+  const totalAmount = document.querySelector('h5 span')
+  let amount = 0
+  amountArr.forEach(item => amount += Number(item.innerHTML))
+  totalAmount.innerText = amount
+}
 
 // 記事背景色
-const container = document.querySelectorAll('.container')
-for (let i = 0; i < container.length; i++) {
-  if (i % 2 === 1) {
-    container[i].className += ' bg bg-light'
+const renderRecordColor = function () {
+  const container = document.querySelectorAll('.container')
+  for (let i = 0; i < container.length; i++) {
+    if (i % 2 === 1) {
+      container[i].className += ' bg bg-light'
+    }
   }
 }
 
-// icons
-const cateIcons = document.querySelectorAll('.cateIcons') //目標
-const icons = document.querySelector('.icons') //後端打到html上的
-const iconTagName = String(icons.innerText).trim().split(' ')  //要加到真正icon的classList的
+// 到DB尋找record對應圖示
+const getRecordIcon = function () {
+  const cateIcons = document.querySelectorAll('.cateIcons') //目標
+  const icons = document.querySelector('.icons') //後端打到html上的
+  const iconTagName = String(icons.innerText).trim().split(' ')  //要加到真正icon的classList的
 
-for (let i = 0; i < iconTagName.length; i++) {
-  cateIcons[i].classList += iconTagName[i]
-  console.log(cateIcons)
+  for (let i = 0; i < iconTagName.length; i++) {
+    cateIcons[i].classList += iconTagName[i]
+    // console.log(cateIcons)
+  }
+}
+
+// inputAlert: prevent user from submitting undefined input
+// function inputAlert() {
+const inputAlert = function () {
+  if (event.target.classList.contains('send')) {
+    const inputName = document.querySelector('.inputName input')
+    const inputDate = document.querySelector('.inputDate input')
+    const inputAmount = document.querySelector('.inputAmount input')
+
+    console.log(inputName.value)
+    console.log(inputDate.value)
+    console.log(inputAmount.value)
+    event.preventDefault()
+    if (!Boolean(inputName.value) || !Boolean(inputDate.value) || !Boolean(inputAmount.value)) {
+      event.preventDefault()
+      alert('資料尚未填寫完全，請填寫完整。')
+    }
+  }
 }
 
 
 
+//////////// executing functions ////////////
+const container = document.querySelector('.container')
+container.addEventListener('click', inputAlert)
+
+getTotalAmount()
+renderRecordColor()
+getRecordIcon()
 

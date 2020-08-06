@@ -2,7 +2,7 @@ h6 span {
   font-size: 24px;
 }
 
-.input {
+.inputName, .inputDate, .inputCategory, .inputAmount {
   /* border: 2px solid; */
   display: flex;
   width: 100%;
@@ -12,7 +12,3 @@ h6 span {
 li {
   list-style-type: none;
 }
-
-/* .create {
-  display: 
-} */

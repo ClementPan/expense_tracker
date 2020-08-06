@@ -27,9 +27,10 @@ router.get('/', (req, res) => {
     .catch(err => console.error(err))
 })
 
-// press create button
+// new route: new to index
 router.post('/', (req, res) => {
   const newRecord = req.body
+  console.log(newRecord)
   Record.create(newRecord)
     .then(res.redirect('/'))
     .catch(err => console.error(err))

@@ -4,15 +4,15 @@
 
     {{!-- 名稱 --}}
     <li>
-      <div class="input d-flex mt-3 mb-4">
+      <div class="inputName d-flex mt-3 mb-4">
         <h4>名稱*：</h4>
-        <input type="text" name='name' style="width: 50%;">
+        <input type="text" name='name' value="" style="width: 50%;">
       </div>
     </li>
 
     {{!-- 日期 --}}
     <li>
-      <div class="input d-flex mb-4">
+      <div class="inputDate d-flex mb-4">
         <h4>日期*：</h4>
         <input type="date" name="date" style="width: 50%;">
       </div>
@@ -20,19 +20,18 @@
 
     {{!-- 類別 --}}
     <li>
-      <div class="input d-flex mb-2">
+      <div class="inputCategory d-flex mb-2">
         <h4>類別*：</h4>
         <div class="dropdown">
           <div class="input-group mb-3">
             <select class="custom-select" id="inputGroupSelect02" name='category'>
-              <option selected>Select</option>
               <option value='家居物業'>家居物業</option>
               <option value='交通出行'>交通出行</option>
               <option value='休閒娛樂'>休閒娛樂</option>
               <option value='餐飲食品'>餐飲食品</option>
               <option value='其他'>其他</option>
             </select>
-            <input type="submit" value="Submit" hidden>
+            <input type="submit" hidden>
           </div>
         </div>
       </div>
@@ -40,13 +39,14 @@
 
     {{!-- 金額 --}}
     <li>
-      <div class="input d-flex mb-4">
+      <div class="inputAmount d-flex mb-4">
         <h4>金額*：</h4>
         <input type="text" name='amount' style="width: 50%;">
       </div>
     </li>
+
     <li class='create justify-content-end'>
-      <button class='btn btn-outline-info mb-2' style="width: 50%;">新增支出</button>
+      <button type="submit" class='send btn btn-outline-info mb-2' style=" width: 50%;">新增支出</button>
     </li>
   </ul>
 </form>
