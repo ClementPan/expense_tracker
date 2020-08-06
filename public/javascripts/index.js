@@ -41,15 +41,12 @@ const inputAlert = function () {
     console.log(inputName.value)
     console.log(inputDate.value)
     console.log(inputAmount.value)
-    event.preventDefault()
     if (!Boolean(inputName.value) || !Boolean(inputDate.value) || !Boolean(inputAmount.value)) {
       event.preventDefault()
       alert('資料尚未填寫完全，請填寫完整。')
     }
   }
 }
-
-
 
 //////////// executing functions ////////////
 const container = document.querySelector('.container')
