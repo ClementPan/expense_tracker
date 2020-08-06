@@ -12,3 +12,7 @@ h6 span {
 li {
   list-style-type: none;
 }
+
+.inputCategory .dropdown {
+  width: 30%;
+}

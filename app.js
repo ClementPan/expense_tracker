@@ -1,7 +1,7 @@
 // basic setting
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000
 
 // use static "Public"
 app.use(express.static('public'))
@@ -32,5 +32,5 @@ const router = require('./routes')
 app.use(router)
 
 app.listen(port, () => {
-  console.log(`Server listening to http://localhost:${port}`)
+  console.log(`Server listening to http://localhost:${PORT}`)
 })
