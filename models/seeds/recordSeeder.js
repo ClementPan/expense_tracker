@@ -37,4 +37,5 @@ const records = [
 db.once('open', () => {
   records.forEach(record => Record.create(record))
   console.log('Seed Record created.')
+  process.exit()
 })
