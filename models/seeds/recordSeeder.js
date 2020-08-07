@@ -3,7 +3,6 @@ const db = require('../../config/mongoose')
 
 // require RecordSchema
 const Record = require('../record')
-const record = require('../record')
 
 const records = [
   {
@@ -35,10 +34,8 @@ const records = [
 ]
 
 db.once('open', () => {
-  records.forEach(record => {
-    Record.create(record)
-      .then(() => db.close())
-      .catch(err => console.error(err))
-  })
-  console.log('Seed Record created!')
+  Record.create(records)
+    .then(() => console.log('Seed Record created!'))
+    .then(() => process.exit())
+    .catch(err => console.error(err))
 })

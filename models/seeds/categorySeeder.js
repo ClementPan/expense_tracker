@@ -3,7 +3,6 @@ const db = require('../../config/mongoose')
 
 // require CategorySchema
 const Category = require('../category')
-const category = require('../category')
 
 // require
 const categories = [
@@ -26,10 +25,8 @@ const categories = [
 ]
 
 db.once('open', () => {
-  categories.forEach(category => {
-    Category.create(category)
-      .then(() => db.close())
-      .catch(err => console.error(err))
-  })
-  console.log('Seed Category created!')
+  Category.create(categories)
+    .then(() => console.log('Seed Category created!'))
+    .then(() => process.exit())
+    .catch(err => console.error(err))
 })
