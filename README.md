@@ -11,7 +11,7 @@
 ### 1. Node.js
 #### Download Node.js:
 [Node.js](https://github.com/coreybutler/nvm-windows/releases)
-#### Chech if download is completed through terminal。
+#### Chech if download is completed through terminal:
 `nvm version`
 ## 
 ## Installation
@@ -23,11 +23,9 @@
 `npm i express express-handlbars method-override body-parser mongoose nodemon`
 ## 
 ## How to use
-#### 1. create fake expense records: npm run seed
-`npm run seedRecord`
-#### 2. create fake expense categories: npm run seedCategory
-`npm run seedCategory`
-#### 3. start project: npm run dev
+#### 1. create dummy data:
+`npm run seed`
+#### 2. start project:
 `npm run dev`
-#### 4. go to chrome:
+#### 3. go to chrome:
 `http://localhost:3000/`

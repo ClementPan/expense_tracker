@@ -26,7 +26,9 @@ const categories = [
 ]
 
 db.once('open', () => {
-  categories.forEach(category => Category.create(category))
-  console.log('Seed Category created.')
-  process.exit()
+  categories.forEach(category => {
+    Category.create(category)
+      .then(() => db.close())
+  })
+  console.log('Seed Category created!')
 })
