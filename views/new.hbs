@@ -1,56 +1,52 @@
 <form action="/" method="post" class="justify-content-center">
   <ul class='list-group'>
-    <h6 class='mb-4 ml-5 d-flex justify-content-center'>*必填欄位：<span class='ml-4'>請輸入你的支出</span></h6>
+
+    <li class='inputTitle d-flex justify-content-center align-items-center'>
+      <h6 style="width: 20%; color:red">*必填欄位：</h6>
+      <h3 style=" width: 40%;" class='d-flex justify-content-center'>請輸入你的支出</h3>
+    </li>
 
     {{!-- 名稱 --}}
-    <li>
-      <div class="inputName d-flex mt-3 mb-3 justify-content-center">
-        <h4>名稱*：</h4>
-        <input type="text" name='name' value="" style="width: 30%;">
-      </div>
+    <li class="inputName d-flex justify-content-center align-items-center">
+      <h4 style="width: 20%;">名稱<span>*</span>：</h4>
+      <input style="width: 40%;" type="text" name='name' value="" style="width: 30%;">
     </li>
 
     {{!-- 日期 --}}
-    <li>
-      <div class="inputDate d-flex justify-content-center mb-3">
-        <h4>日期*：</h4>
-        <input type="date" name="date" style="width: 30%;">
-      </div>
+    <li class="inputDate d-flex justify-content-center  align-items-center">
+      <h4 style="width: 20%;">日期<span>*</span>：</h4>
+      <input style="width: 40%;" type="date" name="date" style="width: 30%;">
     </li>
 
     {{!-- 類別 --}}
-    <li>
-      {{!-- <div class="inputCategory d-flex mb-2"> --}}
-      <div class="inputCategory d-flex justify-content-center mb-3">
-        <h4>類別*：</h4>
-        <div class="dropdown">
-          <div class="input-group">
-            <select class="custom-select" id="inputGroupSelect02" name='category'>
-              <option value='家居物業'>家居物業</option>
-              <option value='交通出行'>交通出行</option>
-              <option value='休閒娛樂'>休閒娛樂</option>
-              <option value='餐飲食品'>餐飲食品</option>
-              <option value='其他'>其他</option>
-            </select>
-            <input type="submit" hidden>
-          </div>
+    <li class="inputCategory d-flex justify-content-center align-items-center">
+      <h4 style="width: 20%;">類別<span>*</span>：</h4>
+      <div class="dropdown" style="width: 40%;">
+        <div class="input-group">
+          <select class="custom-select" id="inputGroupSelect02" name='category'>
+            <option value='家居物業'>家居物業</option>
+            <option value='交通出行'>交通出行</option>
+            <option value='休閒娛樂'>休閒娛樂</option>
+            <option value='餐飲食品'>餐飲食品</option>
+            <option value='其他'>其他</option>
+          </select>
+          <input type="submit" hidden>
         </div>
       </div>
     </li>
 
     {{!-- 金額 --}}
-    <li>
-      <div class="inputAmount d-flex justify-content-center mb-4">
-        <h4>金額*：</h4>
-        <input type="text" name='amount' style="width: 30%;">
-      </div>
+    <li class="inputAmount d-flex justify-content-center align-items-center">
+      <h4 style="width: 20%;">金額<span>*</span>：</h4>
+      <input style="width: 40%;" type="text" name='amount' style="width: 30%;">
     </li>
 
     <li class='send d-flex justify-content-center'>
-      <button type="submit" class='send btn btn-outline-info mb-2'>新增支出</button>
+      <div style="width: 20%;"></div>
+      <button style="width: 40%;" type="submit" class='send btn btn-outline-info mb-2'>新增支出</button>
     </li>
 
-    <li class='d-flex justify-content-center'>
+    <li class='d-flex justify-content-end'>
       <a href="/" class="btn btn-outline-success d-flex justify-content-end">返回</a>
     </li>
   </ul>

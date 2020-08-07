@@ -8,7 +8,8 @@
     "dev": "nodemon app.js",
     "seedCategory": "node models/seeds/categorySeeder.js",
     "seedRecord": "node models/seeds/recordSeeder.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node models/seeds/categorySeeder.js && node models/seeds/recordSeeder.js"
   },
   "keywords": [],
   "author": "",
