@@ -23,7 +23,7 @@
 `npm i express express-handlbars method-override body-parser mongoose nodemon`
 ## 
 ## How to use
-#### 1. create dummy data:
+#### 1. create seed data:
 `npm run seed`
 #### 2. start project:
 `npm run dev`

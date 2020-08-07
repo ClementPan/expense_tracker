@@ -29,6 +29,7 @@ db.once('open', () => {
   categories.forEach(category => {
     Category.create(category)
       .then(() => db.close())
+      .catch(err => console.error(err))
   })
   console.log('Seed Category created!')
 })

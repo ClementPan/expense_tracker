@@ -38,6 +38,7 @@ db.once('open', () => {
   records.forEach(record => {
     Record.create(record)
       .then(() => db.close())
+      .catch(err => console.error(err))
   })
   console.log('Seed Record created!')
 })
