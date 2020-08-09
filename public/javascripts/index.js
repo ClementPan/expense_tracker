@@ -18,7 +18,7 @@ const renderRecordColor = function () {
   }
 }
 
-// 到DB尋找record對應圖示
+// 將Model打到頁面上的各records對應圖示抓出來使用
 const getRecordIcon = function () {
   const cateIcons = document.querySelectorAll('.cateIcons') //目標
   const icons = document.querySelector('.icons') //後端打到html上的
