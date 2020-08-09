@@ -19,49 +19,18 @@ router.get('/:method', (req, res) => {
     filter = '其他'
   }
 
-  // let category = []
-  // return Record.find({ category: filter })
-  //   .lean()
-  //   .then(record => {
-  //     record.forEach(item => {
-  //       let cato = []
-  //       Category.find({ name: item.category })
-  //         .lean()
-  //         .then(cate => {
-  //           cato.push(cate[0].tag)
-  //           category.push(cato)
-  //         })
-  //         .then(() => {
-  //           res.render('index', { record, category, filter })
-  //         })
-  //     })
-  //   })
-  //   .catch(err => console.err(err))
-
-  let category = []
-  return Record.find({ category: filter })
-    .lean()
-    .then(record => {
-      if (!record.length) {
-        return res.render('index', { filter })
-      } else {
-        record.forEach(item => {
-          let cato = []
-          Category.find({ name: item.category })
-            .lean()
-            .then(cate => {
-              cato.push(cate[0].tag)
-              category.push(cato)
-            })
-            .then(() => {
-              return res.render('index', { record, category, filter })
-            })
-        })
-      }
-    })
-    .catch(err => console.err(err))
+  Record.find({ category: filter }).lean().then(records => {
+    Category.find({ name: filter })
+      .lean()
+      .then(categories => {
+        let cateList = []
+        for (let i = 0; i < records.length; i++) {
+          cateList.push(categories[0].tag)
+        }
+        res.render('index', { record: records, category: cateList })
+      })
+  })
 })
-
 
 ////////// exports //////////
 module.exports = router
