@@ -38,12 +38,20 @@ const inputAlert = function () {
     const inputDate = document.querySelector('.inputDate input')
     const inputAmount = document.querySelector('.inputAmount input')
 
-    console.log(inputName.value)
-    console.log(inputDate.value)
-    console.log(inputAmount.value)
+    console.log('inputName: ' + inputName.value)
+    console.log('inputDate: ' + inputDate.value)
+    console.log('inputAmount: ' + inputAmount.value)
+    console.log(typeof (inputAmount.value))
+    // prevent undefined input
     if (!Boolean(inputName.value) || !Boolean(inputDate.value) || !Boolean(inputAmount.value)) {
       event.preventDefault()
-      alert('資料尚未填寫完全，請填寫完整。')
+      alert('資料尚未填寫完全，請填寫完整！')
+    }
+
+    // prevent non-number amount input
+    if (!Number(inputAmount.value)) {
+      event.preventDefault()
+      alert('只能在金額欄位中填入數字！')
     }
   }
 }

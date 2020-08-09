@@ -19,25 +19,48 @@ router.get('/:method', (req, res) => {
     filter = '其他'
   }
 
+  // let category = []
+  // return Record.find({ category: filter })
+  //   .lean()
+  //   .then(record => {
+  //     record.forEach(item => {
+  //       let cato = []
+  //       Category.find({ name: item.category })
+  //         .lean()
+  //         .then(cate => {
+  //           cato.push(cate[0].tag)
+  //           category.push(cato)
+  //         })
+  //         .then(() => {
+  //           res.render('index', { record, category, filter })
+  //         })
+  //     })
+  //   })
+  //   .catch(err => console.err(err))
+
   let category = []
   return Record.find({ category: filter })
     .lean()
     .then(record => {
-      record.forEach(item => {
-        let cato = []
-        Category.find({ name: item.category })
-          .lean()
-          .then(cate => {
-            cato.push(cate[0].tag)
-            category.push(cato)
-          })
-          .catch(error => console.error(error))
-      })
-      res.render('index', { record, category })
+      if (!record.length) {
+        return res.render('index', { filter })
+      } else {
+        record.forEach(item => {
+          let cato = []
+          Category.find({ name: item.category })
+            .lean()
+            .then(cate => {
+              cato.push(cate[0].tag)
+              category.push(cato)
+            })
+            .then(() => {
+              return res.render('index', { record, category, filter })
+            })
+        })
+      }
     })
-    .catch(err => console.error(err))
+    .catch(err => console.err(err))
 })
-
 
 
 ////////// exports //////////

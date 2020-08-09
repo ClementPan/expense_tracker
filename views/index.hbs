@@ -2,7 +2,7 @@
 <div class="dropdown ml-4">
   <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false" style="width: 50%;">
-    類別
+    {{#if filter}} {{filter}} {{else}} 類別 {{/if}}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/sort/home">家居物業</a>
@@ -23,6 +23,7 @@
 {{!-- data list --}}
 <ul class="list-group mb-3">
 
+  {{#if record}}
   {{#each record}}
 
   <div class="icons">
@@ -53,6 +54,13 @@
     </div>
   </li>
   {{/each}}
+
+  {{else}}
+  <li class='d-flex justify-content-center'>
+    <h3>沒有紀錄</h3>
+  </li>
+
+  {{/if}}
 
 </ul>
 {{!-- create --}}
