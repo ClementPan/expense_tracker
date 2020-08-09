@@ -27,7 +27,7 @@ router.get('/:method', (req, res) => {
         for (let i = 0; i < records.length; i++) {
           cateList.push(categories[0].tag)
         }
-        res.render('index', { record: records, category: cateList })
+        res.render('index', { record: records, category: cateList, filter })
       })
   })
 })
