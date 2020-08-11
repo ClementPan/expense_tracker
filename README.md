@@ -2,6 +2,9 @@
 ## A simple EXPENSE TRACKER created with express.js, bootstrap and MongoDB as the database.
 ## Exercise for combining simple UI with MongoDB and routes restfully established.
 
+Try it out here
+[Expense Tracker](https://immense-woodland-01069.herokuapp.com/)
+
 #### App images
 ![Index1](/images/index.png)
 ![Index1](/images/edit.png)
