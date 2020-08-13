@@ -13,7 +13,7 @@ const renderRecordColor = function () {
   const container = document.querySelectorAll('.container')
   for (let i = 0; i < container.length; i++) {
     if (i % 2 === 1) {
-      container[i].className += ' bg bg-light'
+      container[i].className += ' bg bg-white'
     }
   }
 }

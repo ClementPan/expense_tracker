@@ -1,18 +1,24 @@
 {{!-- dropdown --}}
-<div class="dropdown ml-4">
-  <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false" style="width: 50%;">
-    {{#if filter}} {{filter}} {{else}} 類別 {{/if}}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/sort/home">家居物業</a>
-    <a class="dropdown-item" href="/sort/shuttle">交通出行</a>
-    <a class="dropdown-item" href="/sort/grin">休閒娛樂</a>
-    <a class="dropdown-item" href="/sort/utensils">餐飲食品</a>
-    <a class="dropdown-item" href="/sort/pen">其他</a>
+<div class="topBar d-flex justify-content-around align-items-center mb-3">
+  <div class="dropdown ml-4">
+    {{!-- <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false" style="width: 50%;"> --}}
+    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{#if filter}} {{filter}} {{else}} 類別 {{/if}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/sort/home">家居物業</a>
+      <a class="dropdown-item" href="/sort/shuttle">交通出行</a>
+      <a class="dropdown-item" href="/sort/grin">休閒娛樂</a>
+      <a class="dropdown-item" href="/sort/utensils">餐飲食品</a>
+      <a class="dropdown-item" href="/sort/pen">其他</a>
+    </div>
   </div>
+  <a href="/records/new" class="btn btn-danger ml-5">
+    新增支出
+  </a>
 </div>
-
 {{!-- totalAmount --}}
 <h5 class='mb-3 ml-5'>總金額：<span class='ml-4'>N/A</span></h5>
 
@@ -64,4 +70,6 @@
 
 </ul>
 {{!-- create --}}
-<a href="/records/new" class="btn btn-danger ml-5" style="width: 30%;">新增支出</a>
+{{!-- <a href="/records/new" class="btn btn-danger ml-5" style="width: 30%;">
+  新增支出
+</a> --}}
