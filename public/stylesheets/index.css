@@ -17,5 +17,10 @@ h5 {
 }
 
 .cateIcons {
-  font-size: 42px;
+  font-size: 32px;
+  
+}
+
+.liItem .container {
+  border-radius: 10px;
 }

@@ -13,7 +13,8 @@ const renderRecordColor = function () {
   const container = document.querySelectorAll('.container')
   for (let i = 0; i < container.length; i++) {
     if (i % 2 === 1) {
-      container[i].className += ' bg bg-white'
+      // container[i].className += ' bg bg-white'
+      container[i].style = 'background-color: #9bf6ff'
     }
   }
 }
@@ -26,7 +27,6 @@ const getRecordIcon = function () {
 
   for (let i = 0; i < iconTagName.length; i++) {
     cateIcons[i].classList += iconTagName[i]
-    // console.log(cateIcons)
   }
 }
 
