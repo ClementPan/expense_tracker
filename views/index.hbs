@@ -1,9 +1,7 @@
 {{!-- dropdown --}}
-<div class="topBar d-flex justify-content-around align-items-center mb-3">
-  <div class="dropdown ml-4">
-    {{!-- <button class="btn btn-outline-dark dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false" style="width: 50%;"> --}}
-    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+<div class="topBar">
+  <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
       {{#if filter}} {{filter}} {{else}} 類別 {{/if}}
     </button>
@@ -15,19 +13,21 @@
       <a class="dropdown-item" href="/sort/pen">其他</a>
     </div>
   </div>
-  <a href="/records/new" class="btn btn-danger ml-5">
+  <h5>總金額：<span>N/A</span></h5>
+
+  <a href="/records/new" class="btn btn-danger">
     新增支出
   </a>
 </div>
 {{!-- totalAmount --}}
-<h5 class='mb-3 ml-5'>總金額：<span class='ml-4'>N/A</span></h5>
+{{!-- <h5>總金額：<span>N/A</span></h5> --}}
 
 <div class="icons" style="display: none;">
   {{#each category}}{{this}}{{/each}}
 </div>
 
 {{!-- data list --}}
-<ul class="list-group mb-3">
+<ul class="list-group">
 
   {{#if record}}
   {{#each record}}
@@ -36,21 +36,21 @@
     <p>{{#each category}}{{this}}{{/each}}</p>
   </div>
 
-  <li class="liItem d-flex" style="height: 80px;">
-    <div class="container d-flex justify-content-between align-items-center mr-5">
-      <div class="headInfo d-flex align-items-center">
+  <li class="liItem">
+    <div class="container">
+      <div class="headInfo">
+        <div class="middleInfo">
+          {{!-- <i class="cateIcons text-info fas "></i> --}}
+          <i class="cateIcons fas "></i>
 
-        <i class="cateIcons text-info mx-2 fas " style="width: 50px;"></i>
-
-        <div class="middleInfo mr-3">
-          <h5 class='mt-3'>{{this.name}}</h5>
+          <h5>{{this.name}}</h5>
           <p class="date align-items-center">{{this.date}}</p>
         </div>
       </div>
       <h6 class="amount">{{this.amount}}</h6>
     </div>
 
-    <div class='buttons d-flex align-items-center' style="width: 30%;">
+    <div class='buttons'>
       <form action="/records/{{this._id}}" method="get">
         <button type="submit" class="btn btn-outline-dark border border-white" style="display:inline">修改</button>
       </form>
